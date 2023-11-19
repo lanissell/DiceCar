@@ -1,0 +1,20 @@
+assembly-versioning-scheme: MajorMinorPatchTag
+assembly-versioning-format: '{Major}.{Minor}.{Patch}.{WeightedPreReleaseNumber ?? 0}'
+assembly-file-versioning-scheme: MajorMinorPatchTag
+assembly-file-versioning-format: '{Major}.{Minor}.{Patch}.{WeightedPreReleaseNumber ?? 0}'
+tag-pre-release-weight: 9999
+mode: MainLine
+branches:
+  develop:
+    mode: ContinuousDeployment
+    pre-release-weight: 0
+  feature:
+    mode: ContinuousDeployment
+    pre-release-weight: 0
+  release:
+    mode: ContinuousDeployment
+    pre-release-weight: 8000
+  hotfix:
+    pre-release-weight: 9000
+  main:
+    pre-release-weight: 9999
